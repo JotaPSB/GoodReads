@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/bookListFragment">
+
+    <fragment
+        android:id="@+id/bookListFragment"
+        android:name="cat.itb.goodreads.BookListFragment"
+        android:label="BookListFragment" >
+        <action
+            android:id="@+id/action_list_to_fragment"
+            app:destination="@id/bookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookFragment"
+        android:name="cat.itb.goodreads.BookFragment"
+        android:label="BookFragment" >
+
+        <action
+            android:id="@+id/action_fragment_to_list"
+            app:destination="@id/bookListFragment"
+            />
+
+        <argument
+            android:name="book"
+            app:argType="cat.itb.goodreads.Book"
+            app:nullable="true"
+            />
+        <argument
+            android:name="position"
+            app:argType="integer"
+
+            />
+
+    </fragment>
+</navigation>
